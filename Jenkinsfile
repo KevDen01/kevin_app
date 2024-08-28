@@ -21,7 +21,7 @@ pipeline {
                 echo "Pushing image to Docker Hub"
                 withCredentials([usernamePassword(credentialsId: "dockerHub", passwordVariable: "Salamandra-92", usernameVariable: "kevinklein01")]) {
                     sh "sudo docker tag test-app ${env.dockerHubUser}/kevin_app:latest"
-                    sh "sudo docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                    sh "sudo docker login -u -S ${env.dockerHubUser} -p ${env.dockerHubPass}"
                     sh "sudo docker push ${env.dockerHubUser}/kevin_app:latest"
                 }
             }
