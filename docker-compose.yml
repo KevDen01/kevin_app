@@ -1,0 +1,6 @@
+version: "beta"
+services:
+  web: 
+    image: kevinklein01/kevin_app:latest
+    ports:
+      - "8000:8000"
